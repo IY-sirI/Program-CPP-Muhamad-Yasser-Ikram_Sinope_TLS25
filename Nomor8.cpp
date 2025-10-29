@@ -1,0 +1,50 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float distance(float x1, float y1, float x2, float y2){
+	float x_square = (x2 - x1)*(x2 - x1);
+	float y_square = (y2 - y1)*(y2 - y1);
+	float result = sqrt(x_square + y_square);
+	return result;
+}
+
+float radius(float x1, float y1, float x2, float y2){
+	float result = distance(x1, y1, x2, y2);
+	return result;
+}
+
+float circumference(float r){
+	float result = 2 * 3.1416 * r;
+	return result;
+}
+
+float area(float r){
+	float result = 3.1416 * r * r;
+	return result;
+}
+
+int main(){
+	float c1, c2;
+	float p1, p2;
+	cout << "Input the first coordinates (Center of Circle) : ";
+	cin >> c1 >> c2;
+	
+	cout << "Input the second coordinates (Point on Circle) : ";
+	cin >> p1 >> p2;
+	
+	float jari_jari = radius(c1, c2, p1, p2);
+	float diameter = jari_jari*2;
+	float keliling = circumference(jari_jari);
+	float luas = area(jari_jari);
+	
+	cout << "\nJari-Jari : " << jari_jari;
+	cout << "\nDiameter  : " << diameter;
+	cout << "\nKeliling  : " << keliling;
+	cout << "\nLuas      : " << luas;
+	
+	
+	return 0;
+}
+
+
